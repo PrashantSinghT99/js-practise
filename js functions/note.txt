@@ -1,0 +1,12 @@
+//compose
+
+
+//infinite currying
+
+
+//array flattened
+
+
+//promise all
+
+
