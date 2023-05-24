@@ -95,3 +95,17 @@
 //     }
 
 
+// const palli=(num)=>
+// {
+// if(num==="")
+// {
+//     return "";
+// }
+// return palli(num.substr(1))+num.charAt(0);
+// }
+
+// if(palli("10001")==="10001")
+// {
+//     console.log(true);
+// }
+// else console.log(false);
