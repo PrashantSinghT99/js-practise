@@ -29,12 +29,13 @@ function promiseAll(promises) {
         promises.forEach((p, i) => {
             p.then(res => {
                 result.push(res);
-            })
-
+                
             if (i === promises.length - 1) {
                 resolve(result);
             }
-        }).catch((err) => reject(err));
+            }).catch((err) => reject(err));
+
+        })
 
     })
 }

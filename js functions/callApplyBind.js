@@ -2,7 +2,7 @@ const myobj = {
 
     name: "coder",
     myfunc: function (thing) {
-        console.log(this.name + "says hello " + thing);
+        console.log(this.name +" "+ "says hello " + thing);
     }
 }
 
@@ -12,7 +12,7 @@ const secondObj = {
 
 myobj.myfunc.call(secondObj, "world")
 
-myobj.myfunc.apply(secondObj, ["world"])
+ myobj.myfunc.apply(secondObj, ["world"])
 
 const bindFunc = myobj.myfunc.bind(secondObj)
 

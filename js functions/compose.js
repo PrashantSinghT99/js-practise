@@ -1,4 +1,3 @@
-
 // compose 
 
 function add(a)
@@ -16,16 +15,23 @@ function multiply(a)
     return a*4;
 }
 
-const compose=(...functions)=>
-{
+// const compose=(...functions)=>
+// {
+// return (args)=>
+// {
+//     return functions.reduceRight((arg,fn)=>fn(arg),args);
+// }
+// }
+
+const compose=(...functions)=>{
 return (args)=>
 {
-    return functions.reduceRight((arg,fn)=>fn(arg),args);
+return functions.reduceRight((arg,fn)=>fn(arg),args)
 }
 }
-
 
 const evaluate=compose(add,substractTwo,multiply);
 
 console.log(evaluate(5));
+
 
