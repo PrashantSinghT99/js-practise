@@ -39,3 +39,23 @@ function promiseAll(promises) {
 
     })
 }
+
+// var promisePool = async function (functions, n) {
+//     let result = [];
+//     let pool = []
+//     let i = 0;
+//     while (i < functions.length || pool.length > 0) {
+//       while ((pool.length < n && i < functions.length)) {
+//         fn = functions[i];
+//         const index = i;
+//         const resPromise = fn.then((res) => {
+//           result[index] = res;
+//           pool.splice(pool.indexOf(resPromise), 1);
+//         });
+//         pool.push(resPromise);
+//         i++;
+//       }
+//       await Promise.race(pool);
+//     }
+//     return result;
+//   }
