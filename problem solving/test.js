@@ -1,24 +1,15 @@
-// var groupAnagrams = function (strs) {
-//     let element = [];
-//     let map = {};
-//     let arr = [];
-//     for (let i = 0; i < strs.length; i++) {
-//         element[i] = strs[i].split("").sort().join("");
-//     }
-//     // for (let i = 0; i < element.length; i++) {
-//     //     map[element[i]] = [];
-//     // }
-//     for (let i = 0; i < strs.length; i++) {
+var topKFrequent = function (nums, k) {
+    let map = {};
+    for (let i = 0; i < nums.length; i++) {
+        map[nums[i]] = (map[nums[i]] || 0) + 1
+    }
 
-//         if (map[element[i]]) {
-//             map[element[i]].push(strs[i])
-//         }
-//         else{
-//             map[element[i]] = [];
-//         }
-//     }
-//     return Object.values(map);
-// };
-// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])); 
-
-
+    map = Object.entries(map).sort((a, b) => b[1] - a[1]);
+    let arr = [];
+    for (let i = 0; i < k; i++) {
+        arr.push(map.shift());
+    }
+    const result = arr.map(innerArray => Number(innerArray[0]));
+    return result;
+}
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
