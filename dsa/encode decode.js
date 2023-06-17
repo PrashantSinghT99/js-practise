@@ -1,6 +1,4 @@
-
 function encode(strs) {
-
     let newstr = '';
     for (let i = 0; i < strs.length; i++) {
         newstr = newstr + strs[i].length + '#' + strs[i];
@@ -9,12 +7,10 @@ function encode(strs) {
 }
 function Decode(strs) {
     let arr = [];
-   
     for (let i = 0; i < strs.length; i++) {
         if (!isNaN(strs.charAt(i))) {
             if (strs.charAt(i + 1) === "#") {
-                
-                arr.push(strs.substring(i + 2, i+2+Number(strs[i])))
+                arr.push(strs.substring(i + 2, i + 2 + Number(strs[i])))
             }
         }
     }
