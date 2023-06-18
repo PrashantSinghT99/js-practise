@@ -20,3 +20,4 @@ function Decode(strs) {
 console.log(encode(["lint", "code", "love", "you"]));
 console.log(Decode("4#lint4#code4#love3#you"));
 
+//4#lint4#code4#love3#you
