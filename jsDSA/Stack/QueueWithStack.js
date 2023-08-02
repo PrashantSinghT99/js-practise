@@ -1,9 +1,9 @@
-
 var MyQueue = function () {
-
     this.stack1 = [];
     this.stack2 = [];
 };
+[123]
+// [ 3 21]
 /** 
  * @param {number} x
  * @return {void}

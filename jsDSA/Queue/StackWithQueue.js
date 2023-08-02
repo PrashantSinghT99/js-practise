@@ -2,6 +2,9 @@ var MyStack = function () {
     this.q1 = [];
     this.q2 = [];
 };
+//[4 1 2 3]
+//[ 1 2 3]
+
 MyStack.prototype.push = function (x) {
 
     while (this.q1.length !== 0) {
