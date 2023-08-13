@@ -33,36 +33,32 @@
 
 
 
-const clumsyproduct=(num1,num2)=>
-{
-    for(let i=1;i<=100000000;i++){}
-    return num1*num2;
+const clumsyproduct = (num1, num2) => {
+    for (let i = 1; i <= 100000000; i++) { }
+    return num1 * num2;
 };
 
-const memo=(fn,context)=>
-{
-const res={};
+const memo = (fn) => {
+    const res = {};
 
-return function(...args)
-{
-    var argsCache=JSON.stringify(args);
-    if(!res[argsCache])
-    {
-        res[argsCache]=fn.call(context|| this,...args)
+    return function (...args) {
+        var argsCache = JSON.stringify(args);
+        if (!res[argsCache]) {
+            res[argsCache] = fn(...args)
+        }
+        return res[argsCache];
     }
-    return res[argsCache];
-}
 
 }
 
-const testTwo=memo(clumsyproduct);
+const testTwo = memo(clumsyproduct);
 
 console.time("first call")
 
-console.log(testTwo(5354,53545)); 
+console.log(testTwo(5354, 53545));
 console.timeEnd("first call")
 
 console.time("second call")
 
-console.log(testTwo(5354,53545)); 
+console.log(testTwo(5354, 53545));
 console.timeEnd("second call")

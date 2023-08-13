@@ -13,25 +13,18 @@
 // }
 
 const pallindrome = (str) => {
-newStr=str.toLowerCase();
-
-let left=0;
-let right=str.length-1
-
-while(left<right)
-{
-    if(newStr[left]!==newStr[right])
-    {
-return false;
+    newStr = str.toLowerCase();
+    let left = 0;
+    let right = str.length - 1
+    while (left < right) {
+        if (newStr[left] !== newStr[right]) {
+            return false;
+        }
+        else {
+            left++;
+            right--;
+        }
     }
-    else{
-        left++;
-        right--;
-    }
-}
-
-   return true;
-
-
+    return true;
 }
 console.log(pallindrome("radar"))

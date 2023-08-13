@@ -74,28 +74,25 @@
 // console.log(anagram("anagram", "gramana"));
 
 
-var isAnagram = function(s, t) {
-    if(s.length!==t.length)
-{
-    return false;
-}
-const obj1 = {};
-const obj2 = {};
-
-for (let i = 0; i < s.length; i++) {
-    obj1[s.charAt(i)] = (obj1[s.charAt(i)] || 0) + 1;
-    obj2[s.charAt(i)] = (obj2[s.charAt(i)] || 0) + 1;
-}
-
-for(const key in obj1)
-{
-    if(obj1(key)!==obj2(key))
-    {
+var isAnagram = function (s, t) {
+    if (s.length !== t.length) {
         return false;
     }
-    else return true;
-}
+    const obj1 = {};
+    const obj2 = {};
+
+    for (let i = 0; i < s.length; i++) {
+        obj1[s.charAt(i)] = (obj1[s.charAt(i)] || 0) + 1;
+        obj2[s.charAt(i)] = (obj2[s.charAt(i)] || 0) + 1;
+    }
+
+    for (const key in obj1) {
+        if (obj1(key) !== obj2(key)) {
+            return false;
+        }
+        else return true;
+    }
 
 
-   
+
 };

@@ -4,6 +4,8 @@ const newarr = arr.map(ele => ele * 2)
 
 console.log(newarr);
 
+console.log(arr);
+
 
 const secondArr = arr.filter(check)
 console.log(secondArr);

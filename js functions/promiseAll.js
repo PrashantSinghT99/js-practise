@@ -18,7 +18,7 @@ function showText(str, time) {
 const newPromise = promiseAll([
     Promise.resolve("Hi"),
     Promise.resolve("world"),
-    showText("skinny bitch", 2000)
+    showText("hello from 3 promise", 2000)
 ]).then(res => console.log(res))
 
 
