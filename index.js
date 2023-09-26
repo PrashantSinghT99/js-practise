@@ -216,20 +216,38 @@
 
 
 
-function resolveAfter2Seconds() {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve('resolved');
-      }, 2000);
-    });
-  }
+// function resolveAfter2Seconds() {
+//     return new Promise(resolve => {
+//       setTimeout(() => {
+//         resolve('resolved');
+//       }, 2000);
+//     });
+//   }
   
-  async function asyncCall() {
-    console.log('calling');
-    const result = await resolveAfter2Seconds();
-    console.log(result);
-    // Expected output: "resolved"
-  }
+//   async function asyncCall() {
+//     console.log('calling');
+//     const result = await resolveAfter2Seconds();
+//     console.log(result);
+//     // Expected output: "resolved"
+//   }
   
-  asyncCall();
+//   asyncCall();
   
+//Array copy 
+
+// let nums=[1,2]
+
+// let i=0,j=1;
+
+// [nums[i],nums[j]]=[nums[j],nums[i]]
+
+// console.log(nums);
+
+
+// let nums=[1,2,3]
+
+// let arr=[...nums];
+// console.log(arr);
+// arr[0]=5
+// console.log(arr);
+// console.log("nums",nums);
