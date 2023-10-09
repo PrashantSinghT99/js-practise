@@ -283,23 +283,26 @@
 // }
 
 // console.log(add(5)(2)(3)(5)());
-function add(a) {
-  return a + 5;
-}
+// function add(a) {
+//   return a + 5;
+// }
 
-function substractTwo(a) {
-  return a - 2;
-}
+// function substractTwo(a) {
+//   return a - 2;
+// }
 
-function multiply(a) {
-  return a * 4;
-}
+// function multiply(a) {
+//   return a * 4;
+// }
 
-function composeall(...functions) {
-  return function (args) {
-    return functions.reduceRight((arg, f) => f(arg), args);
-  };
-}
+// function composeall(...functions) {
+//   return function (args) {
+//     return functions.reduceRight((arg, f) => f(arg), args);
+//   };
+// }
 
-const ans = composeall(add, substractTwo, multiply);
-console.log(ans(5));
+// const ans = composeall(add, substractTwo, multiply);
+// console.log(ans(5));
+
+let now = new Date().getTime();
+console.log(now);
