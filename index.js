@@ -1,7 +1,6 @@
-
 // console.log(this)
 
-// call apply bind 
+// call apply bind
 
 // var person=
 // {
@@ -26,9 +25,6 @@
 
 // newgo("world")
 
-
-
-
 // Promise.all([
 //     showText("hello", 3000),
 //     Promise.resolve("hi"),
@@ -40,7 +36,6 @@
 //     Promise.resolve("hi"),
 //     Promise.resolve("bye"),
 // ]).then((value) => console.log(value));
-
 
 // function promiseAll(promises) {
 //     let result = [];
@@ -56,7 +51,6 @@
 // });
 // }
 
-
 // function showText(text, time) {
 //     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
@@ -64,7 +58,6 @@
 //         }, time);
 //     });
 // }
-
 
 // const person={
 //     name:"Test",
@@ -79,11 +72,7 @@
 // name:"Prashant Singh"
 // }
 
-
 // console.log(hey,"world")
-
-
-
 
 // NULL AND UNDEFINED
 
@@ -91,13 +80,12 @@
 
 // console.log(a);
 
-
 // console.log(b);
 
 // console.log(typeof(null))
 // console.log(typeof(undefined))
 
-// EVENT DELEGATION 
+// EVENT DELEGATION
 
 // document.querySelector(".main").addEventListener('click',(e)=>
 // {
@@ -123,7 +111,6 @@
 // f(x,y,z)
 // console.log(x,y,z);
 
-
 // const names=[1,3,4,5,6]
 
 // const result =names.filter((ele)=>ele%2===0);
@@ -131,8 +118,6 @@
 // console.log(result);
 
 // const array1 = [1, 2, 3, 4];
-
-
 
 // const names=[1,3,4,5,6]
 
@@ -150,11 +135,9 @@
 //     x();
 // }
 
-
-// map filter reduce 
+// map filter reduce
 
 // const radius = [2, 5, 6, 9, 7]
-
 
 // const area = (r) => {
 //     return Math.PI * r * r;
@@ -176,16 +159,13 @@
 //     return output;
 // }
 
-
 // console.log(calculate(radius, area));
 // console.log(calculate(radius, perimeter));
 // console.log(calculate(radius, diameter));
 
-
 // var num = 8;
 // var num = 10;
 // console.log(num);
-
 
 // function sayHi() {
 //     console.log(name);
@@ -212,10 +192,6 @@
 
 // console.log(typeof typeof 1);
 
-
-
-
-
 // function resolveAfter2Seconds() {
 //     return new Promise(resolve => {
 //       setTimeout(() => {
@@ -223,17 +199,17 @@
 //       }, 2000);
 //     });
 //   }
-  
+
 //   async function asyncCall() {
 //     console.log('calling');
 //     const result = await resolveAfter2Seconds();
 //     console.log(result);
 //     // Expected output: "resolved"
 //   }
-  
+
 //   asyncCall();
-  
-//Array copy 
+
+//Array copy
 
 // let nums=[1,2]
 
@@ -243,7 +219,6 @@
 
 // console.log(nums);
 
-
 // let nums=[1,2,3]
 
 // let arr=[...nums];
@@ -251,3 +226,80 @@
 // arr[0]=5
 // console.log(arr);
 // console.log("nums",nums);
+
+// function delayPromise(text,delay) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(text);
+//     }, delay);
+//   });
+// }
+
+// promiseAll = (promises) => {
+//   let res = [];
+//   return new Promise((resolve, reject) => {
+//     promises.map((p, i) => {
+//       p.then((ans) => {
+//         res.push(ans);
+//         if (promises.length - 1 === i) {
+//              resolve(res);
+//           }
+//       });
+//     });
+//   });
+// };
+
+// promiseAll([
+//   Promise.resolve("Hi 1"),
+//   Promise.resolve("Hiii 2"),
+//   delayPromise("Hiii 3 ",2000),
+// ]).then((res) => console.log(res)).catch((err)=>console.log(err));
+
+// const arr = [
+//   [1, 2],
+//   [6, 7, 8, 9],
+//   [4, 10, 3],
+//   [12, [[13], [15], [16]], 17],
+// ];
+
+// const arrFlat = (arr, depth=1) => {
+//   let res = [];
+//   arr.map((ar) => {
+//     if (Array.isArray(ar) && depth > 0) {
+//       return res.push(...arrFlat(ar, depth - 1));
+//     }
+//     res.push(ar);
+//   });
+//   return res;
+// };
+
+// console.log(arrFlat(arr, 3));
+
+// function add(a) {
+//   return function (b) {
+//     if (b) return add(a + b);
+//     else return a;
+//   };
+// }
+
+// console.log(add(5)(2)(3)(5)());
+function add(a) {
+  return a + 5;
+}
+
+function substractTwo(a) {
+  return a - 2;
+}
+
+function multiply(a) {
+  return a * 4;
+}
+
+function composeall(...functions) {
+  return function (args) {
+    return functions.reduceRight((arg, f) => f(arg), args);
+  };
+}
+
+const ans = composeall(add, substractTwo, multiply);
+console.log(ans(5));
